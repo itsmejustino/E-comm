@@ -16,7 +16,7 @@ ProductTag.init(
       type: DataTypes.STRING,
       allowNull: false,
       references: {
-        model: 'Product',
+        model: 'product',
         id: 'id',
       },
     },
