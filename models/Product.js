@@ -31,6 +31,7 @@ Product.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       unique: true,
+      defaultValue: 10,
       validate: {
         isEmail: true
       }
@@ -39,8 +40,8 @@ Product.init(
       type: DataTypes.STRING,
       allowNull: false,
       references: {
-        model: Category,
-        key: "id"
+        model: 'Category',
+        key: "id",
       }
     }
     // define columns
