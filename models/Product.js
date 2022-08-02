@@ -40,7 +40,7 @@ Product.init(
       type: DataTypes.STRING,
       allowNull: false,
       references: {
-        model: 'Category',
+        model: 'category',
         key: "id",
       }
     }
