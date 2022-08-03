@@ -34,16 +34,15 @@ ProductTag.hasMany(Product,
 )
 
 // Products belongToMany Tags (through ProductTag)
-Product.belongsToMany(ProductTag,
+Product.belongsToMany({through: ProductTag},
 {
-  foreignKey: 'product_id',
+ 
   onDelete: 'CASCADE',
 }
 )
 // Tags belongToMany Products (through ProductTag)
-Tag.belongsToMany(ProductTag,
+Tag.belongsToMany({through: ProductTag},
 {
-  foreignKey: 'product_id',
   onDelete: 'CASCADE',
 }
 )
