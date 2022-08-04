@@ -18,15 +18,18 @@ ProductTag.init(
       references: {
         model: 'product',
         id: 'id',
+        unique: false
       },
     },
     tag_id: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.INTEGER,
       allowNull: false,
       unique: true,
-      validate: {
-        isDecimal: true
-      }
+      references: {
+        model: 'tag',
+        id: 'id',
+        unique: false
+      },
     },
     // define columns
   },
