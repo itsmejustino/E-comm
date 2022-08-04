@@ -7,7 +7,7 @@ router.get("/", async (req, res) => {
   // find all tags
   try {
     const tag = await Tag.findAll({
-      include: [{ model: Product }, { model: ProductTag }],
+      include: [{ model: Product, through: ProductTag }],
     });
     res.status(200).json(tag);
   } catch (err) {
@@ -20,7 +20,7 @@ router.get("/:id", async (req, res) => {
   // find a single tag by its `id`
   try {
     const tag = await Tag.findByPk(req.params.id, {
-      include: [{ model: Product }, { model: ProductTag }],
+      include: [{ model: Product, through: ProductTag }],
     });
     res.status(200).json(tag);
   } catch (error) {
@@ -53,7 +53,7 @@ router.put("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   // delete on tag by its `id` value
   try {
-    const tag = await Category.destroy({
+    const tag = await Tag.destroy({
       where: req.params.id,
     });
     res.status(200).json(tag);
