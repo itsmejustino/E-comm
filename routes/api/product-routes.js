@@ -111,7 +111,7 @@ router.delete("/:id", async (req, res) => {
     const data = await Product.destroy({
       where: {
         id: req.params.id,
-      }
+      },
     });
     res.status(200).json(data);
   } catch (err) {
