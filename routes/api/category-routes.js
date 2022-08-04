@@ -18,7 +18,7 @@ router.get("/:id", async (req, res) => {
   // find one category by its `id` value
   try {
     const data = await Category.findByPk(req.params.id, {
-      include: [ { model: Product }],
+      include: [{ model: Product }],
     });
     res.status(200).json(data);
   } catch (error) {
@@ -40,7 +40,9 @@ router.post("/", async (req, res) => {
 router.put("/:id", async (req, res) => {
   // update a category by its `id` value
   try {
-    const data = await Category.update(req.body, {where: require.params.id});
+    const data = await Category.update(req.body, {
+      where: require.params.id,
+    });
     res.status(200).json(data);
   } catch (error) {
     res.status(500).json(err);
