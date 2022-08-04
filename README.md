@@ -15,7 +15,7 @@
 ## Install-Instructions 
   npm i for dependecies.
 ## Usage-Info
-  After installing dependencies invoke the program by typing 'node server.js'. This program requires any request tester. You can test routes by using (http://localhost:3001/{route}/{id if needed to get specific  item})<br><br>
+  After installing dependencies invoke the program by typing 'node server.js'. This program requires any request tester. You can test routes by using (http://localhost:3001/{route}/{id})<br><br>
   Link to demo Video: https://drive.google.com/file/d/1JsOdBMs_DCTMbjrpeZJWFdQY95qiNSBh/view
 ## Contribute
   If you would like to contribute please send a pull request.
