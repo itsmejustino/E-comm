@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
   try {
     const data = await Category.findAll();
     res.status(200).json(data);
-  } catch (error) {
+  } catch (err) {
     res.status(500).json(err);
   }
   // be sure to include its associated Products
@@ -21,7 +21,7 @@ router.get("/:id", async (req, res) => {
       include: [{ model: Product }],
     });
     res.status(200).json(data);
-  } catch (error) {
+  } catch (err) {
     res.status(500).json(err);
   }
   // be sure to include its associated Products
@@ -32,7 +32,7 @@ router.post("/", async (req, res) => {
   try {
     const Data = await Category.create(req.body);
     res.status(200).json(Data);
-  } catch (error) {
+  } catch (err) {
     res.status(500).json(err);
   }
 });
@@ -44,7 +44,7 @@ router.put("/:id", async (req, res) => {
       where: require.params.id,
     });
     res.status(200).json(data);
-  } catch (error) {
+  } catch (err) {
     res.status(500).json(err);
   }
 });
@@ -56,7 +56,7 @@ router.delete("/:id", async (req, res) => {
       where: req.params.id,
     });
     res.status(200).json(data);
-  } catch (error) {
+  } catch (err) {
     res.status(500).json(err);
   }
 });

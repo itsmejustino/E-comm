@@ -23,7 +23,7 @@ router.get("/:id", async (req, res) => {
       include: [{ model: Product, through: ProductTag }],
     });
     res.status(200).json(tag);
-  } catch (error) {
+  } catch (err) {
     res.status(500).json(err);
   }
   // be sure to include its associated Product data
@@ -54,10 +54,10 @@ router.delete("/:id", async (req, res) => {
   // delete on tag by its `id` value
   try {
     const tag = await Tag.destroy({
-      where: req.params.id,
+      where: req.params.id
     });
     res.status(200).json(tag);
-  } catch (error) {
+  } catch (err) {
     res.status(500).json(err);
   }
 });
