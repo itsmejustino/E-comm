@@ -68,7 +68,7 @@ router.put("/:id", (req, res) => {
   // update product data
   Product.update(req.body, {
     where: {
-      id: require.params.id,
+      id: req.params.id,
     },
   })
     .then((product) => {
@@ -110,7 +110,7 @@ router.delete("/:id", async (req, res) => {
   try {
     const data = await Product.destroy({
       where: {
-        id: require.params.id,
+        id: req.params.id,
       }
     });
     res.status(200).json(data);
